@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:hsl(185, 41%, 84%);
+    font-family: Space Mono, 'Courier New', Courier, monospace;
+    margin-top: 150px; 
+    margin-left: 15%;
+    margin-right: 15%;
+    
+}
+
+h4{
+    letter-spacing: 1rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.card{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 20%;
+}
+
+.grid{
+    display: grid;
+    grid: 100%/ 50% 50%;
+    height: 100%;
+}
+
+.grid1{
+    padding: 30px;
+    margin: 20px;
+}
+.grid2{
+    background-color: rgb(7, 54, 50);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 5px;
+    text-align: right;
+    height: 10%;
+    -moz-appearance: textfield;
+    background-color:  hsl(189, 41%, 97%);
+    font-size: 24px;
+}
+
+.dollar{
+    background-image: url(./images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    padding: 8px;
+    background-origin: content-box;
+    
+}
+
+.h3{
+    padding-top: 1.5rem ;
+
+}
+ 
+.btn{
+    padding-top: 10px;
+    display: grid;
+    grid: 50%/auto auto auto;
+    grid-gap: 1rem;
+    grid-template-columns: 33% 33% 33%;
+    
+     
+} 
+
+#btn1, #btn2, #btn3,#btn4, #btn5{
+    background-color: rgb(5, 58, 58);
+    color: white;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+
+#btn6{
+    background-color: hsl(189, 41%, 97%) ;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border-style: none;
+    color: rgb(7, 85, 85);
+    font-family: monospace;
+    font-weight: 700;
+}
+
+.ppl{
+     background-image: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    padding: 8px;
+    background-origin: content-box;
+}
+
