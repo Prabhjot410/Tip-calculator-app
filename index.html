@@ -18,14 +18,14 @@
 <body>
 
   <div>
-    <h4>SPLI<br>TTER</h4>
+    <h2>SPLI<br>TTER</h2>
   </div>
 
   <div class="card">
     <div class="grid">
       <div class="grid1">
          <form action="">
-          <label for="bill"><h3>Bill</h3></label>
+          <label for="bill"><h3 style="color: hsl(186, 14%, 43%);">Bill</h3></label>
          <input type="number" id="bill" placeholder="0" class="dollar">
          </form>
 
@@ -41,12 +41,21 @@
            </div>
            <form  style="padding-top: 3rem;">
           <label for="ppl"><h3 >Number of People</h3></label>
-         <input type="text" id="ppl" placeholder="0" class="ppl">
+         <input type="number" id="ppl" placeholder="0" class="ppl">
          </form>
          </div>
       </div>
     
-      <div class="grid2"></div>
+      <div class="grid2">
+       <form action="">
+         <label for="tip amount" class="left"> <h4 style="color: white;">Tip Amount</h4><br><h5 style="color:hsl(186, 14%, 43%); ">/ person</h5></label>
+         <input type="number" id="tipAmount" placeholder="$0.00" class="right" >
+       </form>
+
+          <div class="reset">
+            <button id="reset">Reset</button>
+          </div>
+      </div>
     </div>
   </div>
 
