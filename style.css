@@ -6,8 +6,8 @@
 
 body{
     background-color:hsl(185, 41%, 84%);
-    font-family: [Space Mono];
-    margin-top: 150px; 
+    font-family: 'Space Mono',monospace;
+    margin-top: 100px; 
     margin-left: 15%;
     margin-right: 15%;
     
@@ -17,30 +17,35 @@ h2{
     letter-spacing: 1rem;
     text-align: center;
     padding: 20px;
+    color: hsl(186, 14%, 43%);
 }
 
 .card{
     background-color: white;
     border: none;
     border-radius: 10px;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
 }
 
 .grid{
     display: grid;
     grid: 100%/ 50% 50%;
-    height: 100%;
+    
 }
 
 .grid1{
     padding: 30px;
     margin: 20px;
 }
+
+
+
 .grid2{
     background-color:  hsl(183, 100%, 15%);
     padding: 30px;
     margin: 20px;
     border-radius: 10px;
+    
 
 }
 
@@ -51,6 +56,8 @@ input::-webkit-inner-spin-button {
 }
 
 input{
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -61,6 +68,12 @@ input{
     background-color:  hsl(189, 41%, 97%);
     font-size: 24px;
     border: none;
+    cursor: pointer;
+
+}
+
+input:focus {
+    outline: hsl(172, 67%, 45%) auto 5px; 
 }
 
 .dollar{
@@ -92,10 +105,13 @@ input{
     height: 3rem;
     border-radius: 5px;
     font-size: 1.5rem;
-    font-family: monospace;
     border: none;
+    cursor: pointer;
 }
-
+#btn1:focus, #btn2:focus, #btn3:focus,#btn4:focus, #btn5:focus{
+    background-color: hsl(172, 80%, 33%);
+    
+}
 #btn6{
     background-color: hsl(189, 41%, 97%) ;
     font-size: 1.5rem;
@@ -104,35 +120,94 @@ input{
     color: rgb(7, 85, 85);
     font-family: monospace;
     font-weight: 700;
+    cursor: pointer;
+}
+
+#btn6:focus{
+    border: 2px solid hsl(172, 67%, 45%);
 }
 
 .ppl{
-     background-image: url(./images/icon-person.svg);
+    background-image: url(./images/icon-person.svg);
     background-repeat: no-repeat;
     padding: 8px;
     background-origin: content-box;
 }
 
-.left{
-    float: left;
-    display: block;
+
+.grid2 label {
+    padding-top: 20px;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+h4{
+    color: white;
+}
+h5{
+    color: hsl(186, 14%, 43%);
+    padding-top: .5rem;
 }
 
-.right{
-    float: right;
+.grid2 ::placeholder {
+  color: hsl(172, 67%, 45%);
+  font-size: 2rem;
+}
+
+.grid2 input {
+ height: 2.5rem;
+ width: 50%;
+ border: 1px solid #000;
+ margin-top: 10px;
+ float: right;
+ background-color: hsl(183, 100%, 15%);
+ border: none;
+ color: aqua;
+}
+
+.reset {
+    position: relative;
+    -ms-transform: translateY(-13%);
+    transform: translateY(12rem);
+   
+     height: 3rem;
+}
+
+.grid2 button{
+    background-color: hsl(186, 14%, 43%);
+    width: 100%;
+    color: hsl(183, 100%, 15%);
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.grid2 button:focus{
+    background-color: hsl(172, 80%, 33%);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 375px) and (max-width:850px) {
+  body{
+      padding: 0;
+      margin: 0;
+  }
+
+   .card{
+      margin-bottom: 0;
+      height: 100%;
+      
+  }
+
+.grid{
     display: block;
 }
 
 .reset {
-    padding-top: 55%;
+     transform: none;
+     margin-top: 20px;
 }
 
-#reset{
-    background-color :  hsl(186, 14%, 43%);
-    width: 100%;
-    height: 3rem;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.5rem;
-    color: hsl(183, 100%, 15%);
 }
