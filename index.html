@@ -24,39 +24,42 @@
   <div class="card">
     <div class="grid">
       <div class="grid1">
-         <form action="">
-          <label for="bill"><h3 style="color: hsl(186, 14%, 43%);">Bill</h3></label>
+         <form  name="myForm" onsubmit="return validateForm()" >
+          <label for=""><h3 style="color: hsl(186, 14%, 43%);">Bill</h3></label>
          <input type="number" id="bill" placeholder="0" class="dollar">
          </form>
 
          <div class="tip h3">
            <h3>Select Tip %</h3>
-           <div class="btn">
-              <button id="btn1">5%</button>
-             <button id="btn2">10%</button>
-             <button id="btn3">15%</button>
-             <button id="btn4">25%</button>
-             <button id="btn5">50%</button>
-             <button id="btn6">Custom</button>
+           <div class="btn-grid">
+              <button id="tip" class="btn" value="0.05" >5%</button>
+             <button id="tip" class="btn" value="0.1" >10%</button>
+             <button id="tip" class="btn btn-active" value="0.15" >15%</button>
+             <button id="tip" class="btn" value="0.25" >25%</button>
+             <button id="tip" class="btn" value="0.5">50%</button>
+             <input type="number" placeholder="Custom" id="customTip" class="btn6">
            </div>
-           <form  style="padding-top: 3rem;">
-          <label for="ppl"><h3 >Number of People</h3></label>
-         <input type="number" id="ppl" placeholder="0" class="ppl">
+           <form name="myForm" style="padding-top: 3rem;">
+          <label for=""><h3 >Number of People</h3></label>
+          <p id="error"></p>
+         <input type="number" name="fname" id="ppl" placeholder="0" class="ppl">
          </form>
          </div>
       </div>
     
       <div class="grid2">
         <div>
-             <form action="">
-           <label for="amount"><h4>Tip Amount</h4><h5>/ person</h5></label>
-           <input type="number" name="" id="amount" placeholder="$0.00">
-         
-           <label for="total"><h4>Total</h4><h5>/ person</h5></label>
-            <input type="number" name="" id="total" placeholder="$0.00">
-
-
-            </form>
+        <div>
+          <p class="left">Tip Amount<br><span>/ person</span>
+           <h1 class="tipValue">$0.0</h1>
+          </p></div>
+          <br><br><br>
+        <div>
+          <p class="left">Total Amount<br><span>/ person</span>
+          <h1 class="tipValue ">$0.0</h1>
+          </p>
+          
+        </div>
             <button type="reset" id="reset" class="reset">Reset</button>
 
         </div>
@@ -65,9 +68,13 @@
        
           </div>  <!--grid2 end-->
     </div><!--grid end-->
+    
   </div><!--card end-->
 
-  
+   <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Prabhjot Kaur</a>.
+  </div>
  
 </body>
 </html>

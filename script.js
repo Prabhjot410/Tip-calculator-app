@@ -1,17 +1,93 @@
-// Amount = ( bill * tip ) / ppl
-//total = ((amount * ppl) + Bill ) /ppl
+const input = document.getElementById('bill')
+const button = document.querySelectorAll('#tip')
+const customTip = document.getElementById('customTip');
+const error = document.getElementById('error')
+const people = document.getElementById('ppl')
+const totalVal = document.querySelectorAll('.tipValue')
+const reset = document.querySelector('#reset')
 
-const bill = document.getElementById('bill');
-const ppl = document.getElementById('ppl');
-const amount = document.getElementById('amount');
-const total = document.getElementById('total');
-const reset = document.getElementById('reset');
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-const btn3 = document.getElementById('btn3');
-const btn4 = document.getElementById('btn4');
-const btn5 = document.getElementById('btn5');
-const btn6 = document.getElementById('btn6');
+let billVal = 0;
+let peopleVal = 1;
+let tipVal = 0.15;
+
+input.addEventListener('input',validateBill);
+
+function validateBill(){
+    if(input.value.includes(',')){
+        input.value.replace(',','.')
+    }
+    billVal = parseFloat(input.value);
+    calculate()
+    console.log(billVal)
+}
+
+customTip.addEventListener('input',tipCustomVal);
+people.addEventListener('input',setPeopleVal)
+reset.addEventListener('click',handleReset);
 
 
 
+
+button.forEach(btn => {
+    btn.addEventListener('click',handleClick)
+});
+
+
+
+function handleClick(event){
+    button.forEach(btn => {
+        btn.classList.remove('btn-active')
+        if(event.target.innerHTML === btn.innerHTML){
+            btn.classList.add('btn-active');
+            tipVal = parseFloat(btn.innerHTML)/100
+            console.log(tipVal)
+        }
+    })
+    customTip.value=''
+    calculate()
+}
+
+function tipCustomVal(){
+    tipVal = parseFloat(customTip.value/100)
+    button.forEach(btn => {
+        btn.classList.remove('active');
+    })
+    if(customTip.value !== 0){
+         calculate();
+         
+    }
+    console.log(tipVal)
+}
+
+function setPeopleVal(){
+    peopleVal = parseFloat(people.value)
+    if(peopleVal <= 0 ) {
+        error.innerHTML = 'number must be greater than zero'
+        error.style.color="red";
+       
+        setTimeout(function(){
+            error.innerHTML = ''
+        },2000)
+    }
+    console.log(peopleVal)
+    calculate() 
+}
+
+function calculate() {
+    if(peopleVal >= 1 ) {
+        let tip = billVal * tipVal / peopleVal;
+        let totalAmount = billVal * (tipVal + 1) / peopleVal;
+
+        totalVal[0].innerHTML = '$' + tip.toFixed(2);
+        totalVal[1].innerHTML = '$' + totalAmount.toFixed(2);
+    }
+}
+
+function handleReset(){
+    input.value = 0.0;
+    validateBill()
+
+    button[2].click();
+    people.value = 1;
+    setPeopleVal()
+}
